@@ -1,6 +1,6 @@
 package week4;
 
-public interface IntreExam {
+public interface IntreExam{
 
 	int a = 12;
 
