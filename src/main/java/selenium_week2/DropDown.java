@@ -1,6 +1,9 @@
 package selenium_week2;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -11,7 +14,7 @@ public class DropDown {
 
 		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
 
-		ChromeDriver driver = new ChromeDriver(); //Invoke the browser
+		WebDriver driver = new ChromeDriver(); //Invoke the browser
 
 		driver.get("http://automationpractice.com/index.php");
 
@@ -29,7 +32,7 @@ public class DropDown {
 
 		//To choose Dropdown
 		
-		WebElement dropdown = driver.findElement(By.id("selectProductSort"));
+		/*WebElement dropdown = driver.findElement(By.id("selectProductSort"));
 		
 		Select sel = new Select(dropdown);
 		
@@ -37,7 +40,13 @@ public class DropDown {
 		
 		//sel.selectByValue("name:asc");
 		
-		sel.selectByVisibleText("Price: Highest first");
+		sel.selectByVisibleText("Price: Highest first");*/
+		
+		List<WebElement> list = driver.findElements(By.xpath("//select[@id='selectProductSort']/option"));
+		
+		for(int i=0;i<list.size();i++) {
+			System.out.println(list.get(i).getText());
+		}
 		
 		driver.quit();
 
