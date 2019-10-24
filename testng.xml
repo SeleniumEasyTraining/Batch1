@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite-1">
+
+	<test thread-count="5" name="Smoke Test">
+
+		<!-- <groups> <run> <include name="P1" /> <include name="P2" /> </run> 
+			</groups> -->
+
+		<parameter name="browserName" value="chrome" />
+		<parameter name="baseURL"
+			value="http://automationpractice.com/index.php" />
+
+		<classes>
+
+			<class name="testng.LoginPage">
+			 <methods>
+					<include name="login" />
+				</methods>
+			</class>
+
+			<!-- <class name="testng.TestNGAnnotations"> <methods> <include name="verifyLoginPage" 
+				/> <include name="verifyHomePage" /> <include name="verifySignIn" /> </methods> 
+				</class> -->
+			<!-- <class name="testng.TestClass2" /> -->
+
+		</classes>
+
+	</test>
+
+	<!-- <test thread-count="5" name="Firefox Test"> <classes> <class name="testng.TestClass2" 
+		/> </classes> </test> -->
+
+</suite>
